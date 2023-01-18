@@ -1,0 +1,225 @@
+body {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 1.6rem;
+  background-color: #dbddf1;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link.active,
+.nav-link:active,
+.nav-link:hover {
+  color: Limegreen !important;
+}
+
+.uploader {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 80px 0;
+}
+
+.ulbox {
+  width: 600px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.gallery {
+  padding: 80px 0;
+}
+
+.gallery img {
+  background-color: #ffffff;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  height: 270px;
+  object-fit: cover;
+}
+
+img {
+  max-width: 100%;
+}
+
+.fon {
+  background: url(img/avan.jpg); /* Фоновый цвет и фоновый рисунок*/
+  background-size: 100%;
+
+}
+
+.col-sm{
+outline: 2px solid #000; /* Чёрная рамка */
+background: url(/public/img/zzz.jpg);
+}
+
+#zas{
+  /*background: url(img/zzz.jpg);*/
+}
+
+.sa{
+background: url(/public/img/nall.jpg);
+/*background-size: 100%;
+background: rgba(255, 0, 0, 0.5);*/
+}
+
+.sw{
+background: url(img/nall.jpg);
+/*background-size: 100%;
+background: rgba(119, 136, 153, 0.5);*/
+}
+
+.sd{
+background: url(img/wor.jpg);
+/*background-size: 100%;
+background: rgba(0, 0, 255, 0.5);*/
+}
+
+.sas{
+  background-size: 100%;
+  background: rgba(128, 128, 128, 0.5);
+}
+
+img.icon_l {
+  /* border: 2px solid #285688; */
+  border-radius: 4px 4px 4px 4px;
+  float: left;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  margin: 2px 7px 4px 0;
+  /* border: 1px solid #ff9b3a;*/
+}
+
+a {
+
+  text-decoration: none;
+}
+
+.blog{
+  font-size:20px;
+color:#E2A126!important;
+text-shadow: 3px 0 3px #530000,
+0 2px 2px #000,
+-2px 0 2px #000,
+0 -2px 2px #000;
+text-decoration: none;
+}
+
+.him{
+  font-size:30px;
+color:#E2A126!important;
+text-shadow: 3px 0 3px #530000,
+0 2px 2px #000,
+-2px 0 2px #000,
+0 -2px 2px #000;
+}
+
+.hi{
+  color: #FF0000;
+}
+.hif{
+  color: #0000FF;
+}
+
+.container{
+/*  background: url(img/10.jpg);*/
+background-size: 100%;
+
+
+}
+
+.cart{
+/*background: url(img/11.jpg);*/
+
+
+}
+
+
+.semi-transparent-button {
+display: block;
+box-sizing: border-box;
+margin: 0 auto;
+padding: 8px;
+width: 80%;
+max-width: 200px;
+background: #fff; /* запасной цвет для старых браузеров */
+background: rgba(255, 255, 255, 0.5);
+border-radius: 8px;
+color: #fff;
+text-align: center;
+text-decoration: none;
+letter-spacing: 1px;
+transition: all 0.3s ease-out;
+text-decoration: none;
+}
+a.button {
+position: relative;
+display: inline-block;
+text-decoration: none;
+font-size: 24px;
+font-weight: bold;
+color: hsl(88, 70%, 30%);
+text-shadow: rgba(255,255,255,.5) 0 -1px 0, rgba(0,0,0,.2) 0 .18em .15em;
+text-decoration: none;
+user-select: none;
+margin: .5em;
+padding: .5em .6em .4em .6em;
+border-radius: 8px;
+border-top: 1px solid rgba(255,255,255,.1);
+border-bottom: 1px solid rgba(0,0,0,.1);
+outline: none;
+background: #a2cf70 radial-gradient(rgba(255,255,255,0), rgba(255,255,255,.5));
+box-shadow:
+ inset rgba(255,255,255,.6) 0 .3em .3em,
+ inset rgba(0,0,0,.2) 0 -.1em .3em,
+ rgb(128,161,103) 0 7px 1px,
+ rgba(0,0,0,.2) 0 .5em 5px;
+transition: background .2s ease-in-out;
+}
+a.button:hover {
+background-color: hsl(88, 70%, 75%);
+text-decoration: none;
+}
+a.button:active {
+top: .2em;
+color: rgba(254,255,255,.9);
+text-shadow: rgba(0,0,0,.2) 0 1px 2px;
+box-shadow:
+ inset rgba(255,255,255,.6) 0 .3em .3em,
+ inset rgba(0,0,0,.2) 0 -.1em .3em,
+ rgba(0,0,0,.4) 0 .1em 1px,
+ rgba(0,0,0,.3) 0 .2em 6px;
+ text-decoration: none;
+}
+a.button:after {
+content:  "";
+position:  absolute;
+width:   90%;
+height:  60%;
+top:   0;
+left:   5%;
+border-radius:    .5em .5em 1em 1em / .5em .5em 2em 2em;
+background-image: linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.3));
+text-decoration: none;
+}
+.button:active:after {
+opacity: .100;
+
+}
+
+.leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0; /* Отступы вокруг картинки
+   }
+.red{
+  color: #ffecc7;
+}
+*/
