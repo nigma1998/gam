@@ -27,6 +27,7 @@ class CartUpdateRequest extends FormRequest
               'product_name' => ['sometimes'],
           'total_time' => ['sometimes'],
           'exp' => ['sometimes'],
+          'coins' => ['sometimes'],
           'image_url' => ['sometimes'],
           'dat' => ['sometimes'],
           'identifier' => ['sometimes'],

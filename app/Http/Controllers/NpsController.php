@@ -94,14 +94,18 @@ class NpsController extends Controller
     //  dd($gem);
 
     $ex = Auth::user()->exp; // общее количество опыта у игрока
+    $monet = Auth::user()->coins; // общее количество монет у игрока
     $level = Auth::user()->lvl; //уровень игрока
     $accrual = request()->input('exp'); // количество получаемого опыта
+    $coins = request()->input('coins'); // количество получаемых монет
     $addition = $ex + $accrual;
+    $con = $monet + $coins;
     $result = $addition;
 
     if ($ex <= $lv) {
       $user = Users::findOrFail(Auth::user()->id);
       $user->exp = $result;
+      $user->coins = $con;
       $user->save();
     }else{
       ++$level;
@@ -109,6 +113,7 @@ class NpsController extends Controller
       $resul = $subtraction;
       $user = Users::findOrFail(Auth::user()->id);
       $user->exp = $resul;
+      $user->coins = $con;
       $user->lvl = $level;
       $user->save();
     }

@@ -562,6 +562,9 @@ $date = date("Y-m-d H:i:s");
       <input type="hidden" class="form-control" name="identifier" id="identifier" value="1">
       </div>
       <div class="form-group">
+        <input type="hidden" class="form-control" name="coins" id="coins" value="{{ $lafLis->coins }}">
+        </div>
+      <div class="form-group">
       <input type="hidden" class="form-control" name="dat" id="dat" value="{{$date}}">
       </div>
 

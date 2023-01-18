@@ -28,6 +28,7 @@ class NpsUpdateRequest extends FormRequest
           'exp' => ['required', 'string'],
           'total_time' => ['required', 'string'],
           'description' => ['sometimes'],
+          'coins' => ['sometimes'],
           'image_url' => ['sometimes'],
           'drug_one' => ['sometimes'],
           'amount_one' => ['sometimes'],
