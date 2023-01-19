@@ -6,8 +6,11 @@ use App\Http\Controllers\ViewController;
 use App\Http\Controllers\ButtonController;
 use App\Http\Controllers\NpsController;
 use App\Http\Controllers\ChatController; 
+use App\Http\Controllers\AmbulanceController; 
+use App\Http\Controllers\ButtonparkController; 
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\ProbaController;
+use App\Http\Controllers\AmbulancController;
 use App\Http\Controllers\CanteenController;
 use App\Http\Controllers\BonusController;
 use App\Http\Controllers\PharmaceuticalsController;
@@ -40,10 +43,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//подключение домашней страницы игрока
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//подключение скорой помощи
+Route::get('/ambulance', [App\Http\Controllers\AmbulanceController::class, 'index'])->name('ambulance');
 
 
+//подключение админки
 Auth::routes();
 Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
 Route::resource('global', AdminGlobalController::class);
@@ -56,19 +62,24 @@ Route::resource('dish', AdminDishController::class);
 Route::resource('users', AdminUserController::class);
 Route::resource('schablon', AdminSchablonControllerController::class);
 });
-
+//подключение кухни
 Route::group(['prefix' => 'canteen', 'as' => 'canteen.'], function(){
 Route::resource('canteen', CanteenController::class);
 });
-
+//подключение чата
 Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
   Route::resource('chat', ChatController::class);
 });
-
+//подключение автопарка
+Route::group(['prefix' => 'ambulance', 'as' => 'ambulance.'], function () {
+  Route::resource('ambulance', AmbulancController::class);
+  Route::resource('buttonpark', ButtonparkController::class);
+});
+  //подключение склада
   Route::group(['prefix' => 'stock', 'as' => 'stock.'], function(){
   Route::resource('stock', StockController::class);
   });
-
+  //подключение формацевтики
   Route::group(['prefix' => 'pharmaceuticals', 'as' => 'pharmaceuticals.'], function(){
   Route::resource('pharmaceuticals', PharmaceuticalsController::class);
   Route::resource('bonus', BonusController::class);
@@ -76,7 +87,7 @@ Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
 
 
 
-
+//подключение палат
 Route::group(['prefix' => 'gem', 'as' => 'gem.'], function(){
 Route::resource('gem', CartController::class);
 Route::resource('nonesk', NpsController::class);
@@ -85,9 +96,6 @@ Route::resource('proba', ProbaController::class);
 Route::resource('button', ButtonController::class);
 Route::resource('diamond', DiamondController::class);
   });
-
-
-Route::post('pharmaceuticals/pharmaceuticals/{$button}', [GeneralController::class, 'updat'])->name('general.updat');
 
 
 

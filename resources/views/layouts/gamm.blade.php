@@ -65,12 +65,13 @@ $pharmaceuticals = DB::table('lab')->where('user', $user)->count();
 <span class="ylwtitle">(*)</span>                </li>-->
 
                 <li>
-                    @if (Auth::user()->lvl > 15)        
+                    @if (Auth::user()->lvl > 6)        
                     <!--<img width="16" height="16" alt="o" src="{{ asset('storage/images/palata.png') }}">-->
-                        <a href="/VetClinic?t=637958294648680268">Скорая помощь</a>
-                        <span class="ylwtitle">(5)</span>
-                        @endif
+                        <a href="{{ url('ambulance') }}">Скорая помощь</a>
+                        <span class="ylwtitle"></span>
+                        @else
                         <p>Скорая помощь (доступна с 16/26 уровней)</p>
+                        @endif
                 </li>
 
 <br>

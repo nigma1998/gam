@@ -12,9 +12,9 @@ class Users extends Model
 
 
 
-    public static array $allowedFields = ['id', 'name', 'email', 'lvl', 'exp', 'klan', 'klans_name' ];
+    public static array $allowedFields = ['id', 'name', 'email', 'lvl', 'exp', 'klan', 'klans_name', 'coins' ];
 
     protected $fillable = [
-      'id', 'name', 'email', 'lvl', 'exp', 'klan', 'klans_name'
+      'id', 'name', 'email', 'lvl', 'exp', 'klan', 'klans_name', 'coins'
     ];
 }

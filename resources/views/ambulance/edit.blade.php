@@ -21,9 +21,12 @@
 
         <li class="padtop_s first-li ">
           @foreach($npsListt as $lafLis)
-
+          @php
+          $exp = $lafLis->exp * 3;
+          $coins = $lafLis->coins * 3;
+      @endphp
           <div class="card-body">
-            <form  method="post" action="{{ route('gem.gem.update', ['gem'=> $lis]) }}"  enctype="multipart/form-data">
+            <form  method="post" action="{{ route('ambulance.ambulance.update', ['ambulance'=> $ambulance]) }}"  enctype="multipart/form-data">
               @csrf
               @method('put')
             <img class="icon" width="58" height="58" src="{{ Storage::url($lafLis->image_url)}}"/>
@@ -31,7 +34,7 @@
                 {{$lafLis->product_name}} <span class="smallfont minor"> </span>
 <span class="smallfont minor">(Андрей, 24 года)</span><span class="smallfont minor">, </span>
 
- 
+
             </div>
 
 <div class="smallfont minor" style="margin-left:52px;">
@@ -40,10 +43,10 @@
         <span class="ylwtitle">{{$lafLis->total_time}}.</span>
     </div>
     <span>Опыт:</span>
-    <img width="16" height="16" src="{{ asset('public/storage/images/exp.png') }}"/><span class="money">{{$lafLis->exp}}</span><span class="minor">, </span>
+    <img width="16" height="16" src="{{ asset('public/storage/images/exp.png') }}"/><span class="money">{{$exp}}</span><span class="minor">, </span>
     <span>Доход:</span>
     <img width="16" height="16" src="{{ asset('public/storage/images/moni.jpg') }}"/>
-    <span class="money">550</span><span class="minor">, </span>
+    <span class="money">{{$coins}}</span><span class="minor">, </span>
 
 </div>
 <!-- здесь вывод перечень nps с последующим его записи в бд-->
@@ -60,7 +63,7 @@
             </div>
             <div class="form-group">
 
-            <input type="hidden" class="form-control" name="exp" id="exp" value="{{$lafLis->exp}}">
+            <input type="hidden" class="form-control" name="exp" id="exp" value="{{$exp}}">
             </div>
             <div class="form-group">
 
@@ -85,7 +88,7 @@
                   </div>
                   <div class="form-group">
 
-                    <input type="hidden" class="form-control" name="coins" id="coins" value="{{$lafLis->coins}}">
+                    <input type="hidden" class="form-control" name="coins" id="coins" value="{{$coins}}">
                     </div>
             <div class="form-group">
 
